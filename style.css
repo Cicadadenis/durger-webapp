@@ -60,8 +60,20 @@ body{
 .grid{
   padding:10px 12px 90px;
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
   gap:10px;
+
+  /* АДАПТИВ: колонки сами подстраиваются */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+/* Если окно совсем узкое — принудительно 2 колонки */
+@media (max-width: 420px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Если ещё уже — 1 колонка */
+@media (max-width: 320px){
+  .grid{ grid-template-columns: 1fr; }
 }
 
 .card{
