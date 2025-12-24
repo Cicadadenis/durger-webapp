@@ -1,0 +1,170 @@
+:root{
+  --bg:#0d1117;
+  --card:#1b2230;
+  --card2:#202a3b;
+  --text:#e6edf3;
+  --muted:#9aa4b2;
+  --accent:#f7b500;
+  --danger:#e5534b;
+  --ok:#2ea043;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app{max-width:520px; margin:0 auto; min-height:100vh; display:flex; flex-direction:column}
+.topbar{
+  padding:14px 14px 10px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand{display:flex; align-items:center; gap:10px}
+.logo{
+  width:38px; height:38px; border-radius:12px;
+  background:#d63b33; display:grid; place-items:center; font-weight:800;
+}
+.name{font-weight:800; font-size:16px}
+.sub{font-size:12px; color:var(--muted)}
+.sendBtn{
+  padding:10px 12px; border-radius:12px; border:0;
+  background: #2d333b; color: var(--muted); font-weight:700;
+}
+.sendBtn:enabled{background: var(--ok); color:#07140a}
+
+/* Tabs */
+.tabs{
+  padding: 0 12px 6px;
+  display:flex;
+  gap:8px;
+  overflow:auto;
+}
+.tab{
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:#141b26;
+  color: var(--muted);
+  font-weight:800;
+  white-space:nowrap;
+}
+.tab.active{
+  background: var(--accent);
+  color:#1a1a1a;
+  border-color: transparent;
+}
+
+.grid{
+  padding:10px 12px 90px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:10px;
+}
+
+.card{
+  background: linear-gradient(180deg, var(--card), var(--card2));
+  border-radius:16px;
+  padding:10px;
+  min-height:128px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+}
+
+.badge{
+  position:absolute; top:8px; right:8px;
+  background:#ffc83d;
+  color:#1a1a1a;
+  font-size:12px; font-weight:800;
+  width:20px; height:20px;
+  display:grid; place-items:center;
+  border-radius:999px;
+  display:none;
+}
+.badge.show{display:grid}
+
+.emoji{font-size:28px}
+.title2{font-weight:800; font-size:12.5px; margin-top:6px}
+.price{color:var(--muted); font-weight:700; font-size:12px; margin-top:2px}
+
+.controls{display:flex; gap:6px; margin-top:8px}
+.btn{
+  flex:1;
+  padding:8px 0;
+  border-radius:12px;
+  border:0;
+  font-weight:900;
+}
+.btn.add{background: var(--accent); color:#1a1a1a}
+.btn.minus{background: var(--danger); color:#fff}
+.btn.small{flex:0 0 42px}
+
+.bottom{
+  position:fixed;
+  left:0; right:0; bottom:0;
+  max-width:520px; margin:0 auto;
+  padding:10px 12px;
+  background: rgba(13,17,23,.92);
+  backdrop-filter: blur(8px);
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex; gap:10px; align-items:center;
+}
+.viewBtn{
+  flex:1;
+  padding:14px 12px;
+  border-radius:14px;
+  border:0;
+  background: var(--ok);
+  color:#06110a;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+.total{font-weight:900; color:var(--text); min-width:90px; text-align:right}
+
+.backdrop{
+  position:fixed; inset:0;
+  background: rgba(0,0,0,.45);
+  display:none;
+}
+.backdrop.show{display:block}
+
+.sheet{
+  position:fixed;
+  left:0; right:0; bottom:-100%;
+  max-width:520px; margin:0 auto;
+  background: #0f1520;
+  border-radius:18px 18px 0 0;
+  border:1px solid rgba(255,255,255,.08);
+  transition: bottom .25s ease;
+  z-index:10;
+}
+.sheet.show{bottom:0}
+.sheetHead{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 14px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.sheetTitle{font-weight:900}
+.closeSheet{border:0; background:transparent; color:var(--muted); font-size:18px}
+.sheetBody{padding:10px 14px; max-height:45vh; overflow:auto}
+.row{display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed rgba(255,255,255,.08)}
+.row:last-child{border-bottom:0}
+.sheetFooter{
+  display:flex; gap:10px; align-items:center;
+  padding:12px 14px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.sheetTotal{font-weight:900; min-width:90px}
+.sheetSend{
+  flex:1;
+  padding:12px;
+  border-radius:14px;
+  border:0;
+  background: var(--accent);
+  color:#1a1a1a;
+  font-weight:900;
+}

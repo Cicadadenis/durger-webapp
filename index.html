@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Durger King</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">D</div>
+        <div class="title">
+          <div class="name">Durger King</div>
+          <div class="sub">Меню</div>
+        </div>
+      </div>
+      <button id="sendBtn" class="sendBtn" disabled>SEND</button>
+    </div>
+
+    <!-- Tabs / Categories -->
+    <div class="tabs" id="tabs"></div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="bottom">
+      <button id="viewBtn" class="viewBtn">VIEW ORDER</button>
+      <div class="total" id="totalText">$0.00</div>
+    </div>
+
+    <div class="sheet" id="sheet">
+      <div class="sheetHead">
+        <div class="sheetTitle">Ваш заказ</div>
+        <button id="closeSheet" class="closeSheet">✕</button>
+      </div>
+      <div class="sheetBody" id="sheetBody"></div>
+      <div class="sheetFooter">
+        <div class="sheetTotal" id="sheetTotal">$0.00</div>
+        <button id="sheetSend" class="sheetSend">SEND TO BOT</button>
+      </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
