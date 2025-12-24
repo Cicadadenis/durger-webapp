@@ -80,7 +80,7 @@ body{
   background: linear-gradient(180deg, var(--card), var(--card2));
   border-radius:16px;
   padding:10px;
-  min-height:128px;
+  min-height: 118px; /* было 128px */
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -113,7 +113,7 @@ body{
 }
 .btn.add{background: var(--accent); color:#1a1a1a}
 .btn.minus{background: var(--danger); color:#fff}
-.btn.small{flex:0 0 42px}
+.btn.small{ flex:0 0 38px; }  /* было 42px */
 
 .bottom{
   position:fixed;
